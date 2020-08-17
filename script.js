@@ -20,22 +20,30 @@ app.get('/read/:id', (req, res) => {
   
 })
 
+// LÄSER IN ALLA BLOGGINLÄGG
+app.get('/read', (req, res) => {
+    db.find({}, (err, docs) => {
+      res.send(docs)
+    });
+    
+  })
+
 //UPPDATERAR BEFINTLIGA INLÄGG
 app.put('/update/:id/:title/:content', (req, res) => {
  
   db.find({ _id: req.params.id },  (err, docs) => {
     
-    db.update({_id:req.params.id}, {title: req.params.title , content: req.params.content }, (err, updateDoc) => {
+    db.update({_id:req.params.id}, {title: req.params.title , content: req.params.content }, (err, numReplaced) => {
     
-     res.send(updateDoc)
+     res.send(numReplaced)
       
   });
   
 });
 
-    //res.send(updateDoc);
 })
 
+//RADERAR BLOGGINLÄGGET SOM MATCHAR ID:T
 app.delete('/delete/:id', (req, res) => {
     db.find({ _id: req.params.id },  (err, docs) => {
         db.remove({ _id: req.params.id }, {},  (err, numRemoved) => {
