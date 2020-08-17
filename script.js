@@ -4,17 +4,11 @@ const dataStore = require('nedb')
 const app = express()
 let db = new dataStore({filename: './database.db', autoload: true});
 
-var blogPost = { title: 'test', content: 'testar' };
-
-db.insert(blogPost, (err, newDoc)  => {   // Callback is optional
-    console.log(newDoc);
-  // newDoc is the newly inserted document, including its _id
-  // newDoc has no key called notToBeSaved since its value was undefined
-});
-
-
-app.get('/create', (req, res) => {
-  res.send('Nothing here!')
+app.post('/create/:title/:content', (req, res) => {
+    var blogPost = { title: req.params.title, content: req.params.content };
+    db.insert(blogPost, (err, newDoc)  => { 
+        res.send(newDoc)
+    });
 })
 
 app.get('/read', (req, res) => {
