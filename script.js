@@ -36,8 +36,12 @@ app.put('/update/:id/:title/:content', (req, res) => {
     //res.send(updateDoc);
 })
 
-app.get('/delete', (req, res) => {
-    res.send('Nothing here!')
+app.delete('/delete/:id', (req, res) => {
+    db.find({ _id: req.params.id },  (err, docs) => {
+        db.remove({ _id: req.params.id }, {},  (err, numRemoved) => {
+            res.send(numRemoved + " Blogpost has been removed!");
+          });
+    });
 })
 
 app.listen(3000, () => {
