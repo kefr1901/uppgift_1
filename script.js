@@ -11,8 +11,14 @@ app.post('/create/:title/:content', (req, res) => {
     });
 })
 
-app.get('/read', (req, res) => {
-  res.send('Nothing here!')
+app.get('/read/:id', (req, res) => {
+  db.find({ _id: req.params.id }, function (err, docs) {
+    
+    // docs is an array containing documents Mars, Earth, Jupiter
+    // If no document is found, docs is equal to []
+    res.send(docs)
+  });
+  
 })
 
 app.get('/update', (req, res) => {
