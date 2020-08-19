@@ -4,6 +4,7 @@
   "description": "Första repetionsuppgiften 17/8/2020",
   "main": "app.js",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "nedb": "^1.8.0"
   },

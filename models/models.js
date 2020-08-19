@@ -1,11 +1,12 @@
 const dataStore = require('nedb');
 const express = require('express')
 
-let db = new dataStore({ filename: './database.db', autoload: true });
+let postCollection = new dataStore({ filename: './post.db', autoload: true });
+let commentCollection = new dataStore({ filename: './comment.db', autoload: true });
 
 function insertDB(blogPost) {
     return new Promise((resolve, reject) => {
-        db.insert(blogPost, (err, newDoc) => {
+        postCollection.insert(blogPost, (err, newDoc) => {
             resolve(newDoc)
         });
     })
@@ -13,16 +14,16 @@ function insertDB(blogPost) {
 
 function findBlog(id) {
     return new Promise((resolve, reject) => {
-        db.find({ _id: id }, function (err, docs) {
+        postCollection.find({ _id: id }, function (err, docs) {
             resolve(docs)
         });
     })
 }
 
-function updateBlog(id, title, content) {
+function updateBlog(id, title, content, comment) {
     return new Promise((resolve, reject) => {
-    db.find({ _id: id }, (err, docs) => {
-            db.update({ _id: id }, { title, content}, (err, updateDoc) => {
+    postCollection.find({ _id: id }, (err, docs) => {
+            postCollection.update({ _id: id }, { title, content, comment}, (err, updateDoc) => {
                 resolve(updateDoc)
             });
         });
@@ -32,8 +33,8 @@ function updateBlog(id, title, content) {
 
 function deleteBlog(id){
     return new Promise((resolve, reject) => {
-    db.find({ _id: id }, (err, docs) => {
-        db.remove({ _id: id }, {}, (err, numRemoved) => {
+    postCollection.find({ _id: id }, (err, docs) => {
+        postCollection.remove({ _id: id }, {}, (err, numRemoved) => {
             resolve(numRemoved + " Blogpost has been removed!");
         });
     });
