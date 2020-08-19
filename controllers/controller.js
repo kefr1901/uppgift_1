@@ -17,19 +17,13 @@ router.get('/read/:id', async (req, res) => {
 
     const blog = await modelsDB.findBlog(req.params.id)
     res.send(blog)
-
 })
 
 //UPPDATERAR BEFINTLIGA INLÄGG
 router.put('/update/:id/:title/:content', async (req, res) => {
-
     const updateBlog = await modelsDB.updateBlog(req.params.id, req.params.title, req.params.content)
-
     res.json(updateBlog + "uppdaterad");
-    
-    
 })
-
 
 router.delete('/delete/:id', async (req, res) => {
     const deleteBlog = await modelsDB.deleteBlog(req.params.id)
