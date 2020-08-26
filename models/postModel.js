@@ -2,7 +2,6 @@ const dataStore = require('nedb');
 const express = require('express')
 
 let postCollection = new dataStore({ filename: './post.db', autoload: true });
-let commentCollection = new dataStore({ filename: './comment.db', autoload: true });
 
 function insertDB(blogPost) {
     return new Promise((resolve, reject) => {
