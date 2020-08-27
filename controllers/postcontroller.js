@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 
 //LÄGGER TILL NYA BLOGGINLÄGG I DATABASEN
 async function createPost(req, res){
-    var blogPost = { title: req.body.title, content: req.body.content, comment: req.body.comment };
+    var blogPost = { title: req.body.title, content: req.body.content, comment: req.body.comment , user: req.user.userId };
     const result = await postModel.insertDB(blogPost)
     res.json({result})
 
@@ -24,12 +24,12 @@ async function readOne(req, res) {
 
 //UPPDATERAR BEFINTLIGA INLÄGG
 async function update(req, res) {
-    const updateBlog = await postModel.updateBlog(req.params.id, req.body.title, req.body.content, req.body.comment)
+    const updateBlog = await postModel.updateBlog(req.params.id, req.body.title, req.body.content, req.body.comment, req.user.userId)
     res.json(updateBlog + "uppdaterad");
 };
 
 async function deleteBlog(req, res) {
-    const deleteBlog = await postModel.deleteBlog(req.params.id)
+    const deleteBlog = await postModel.deleteBlog(req.params.id, req.user.userId)
     res.json({deleteBlog});
 }
 

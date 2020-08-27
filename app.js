@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const postRouter = require('./routes/post')
 const commentRouter = require('./routes/comment')

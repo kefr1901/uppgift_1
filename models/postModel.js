@@ -19,25 +19,21 @@ function findBlog(id) {
     })
 }
 
-function updateBlog(id, title, content, comment) {
+function updateBlog(id, title, content, comment ,user) {
     return new Promise((resolve, reject) => {
-    postCollection.find({ _id: id }, (err, docs) => {
-            postCollection.update({ _id: id }, { title, content, comment}, (err, updateDoc) => {
+            postCollection.update({ _id: id,  user: user }, { title, content, comment,}, (err, updateDoc) => {
                 resolve(updateDoc)
             });
         });
-    });
 
 }
 
-function deleteBlog(id){
+function deleteBlog(id, user){
     return new Promise((resolve, reject) => {
-    postCollection.find({ _id: id }, (err, docs) => {
-        postCollection.remove({ _id: id }, {}, (err, numRemoved) => {
+        postCollection.remove({ _id: id,  user: user  }, {}, (err, numRemoved) => {
             resolve(numRemoved + " Blogpost has been removed!");
         });
     });
-});
 }
 
 

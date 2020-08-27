@@ -9,9 +9,18 @@ router.get("/", (req, res) => {
 
 
 async function createUser(req, res){
-    var user = { username: req.body.username, password: req.body.password};
-    const result = await userModel.insertDB(user)
-    res.json({result})
+    var username = req.body.username;
+    var password = req.body.password;
+    var user = 'user'
+
+    const newUser = {username,password,user}
+    try{
+        const result = await userModel.insertDB(newUser)
+        res.json({result});
+    }catch(error){
+        res.status(400).json({error});
+    }
+        
 
 }
 

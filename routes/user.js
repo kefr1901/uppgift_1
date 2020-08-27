@@ -12,7 +12,7 @@ userRouter.get('/read/', async (req, res) => {
     userController.findUsers(req, res)
 })
 
-userRouter.get('/read/:id', async (req, res) => {
+userRouter.get('/read/?:id', async (req, res) => {
     userController.findUser(req, res)
 })
 
