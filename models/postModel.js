@@ -19,11 +19,19 @@ function findBlog(id) {
     })
 }
 
-function updateBlog(id, title, content, comment ,user) {
+function updateBlog(blogPost, isAdmin) {
     return new Promise((resolve, reject) => {
-            postCollection.update({ _id: id,  user: user }, { title, content, comment,}, (err, updateDoc) => {
+        if(isAdmin){
+            postCollection.update({_id: blogPost._id },  {title:blogPost.title, content:blogPost.content}, (err, updateDoc) => {
                 resolve(updateDoc)
             });
+            
+        }else{
+            postCollection.update({_id: blogPost._id,  user:blogPost.user },  blogPost, (err, updateDoc) => {
+                resolve(updateDoc)
+            });
+            
+        }
         });
 
 }

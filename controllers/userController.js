@@ -11,9 +11,9 @@ router.get("/", (req, res) => {
 async function createUser(req, res){
     var username = req.body.username;
     var password = req.body.password;
-    var user = 'user'
+    var groups = ['user','admin']
 
-    const newUser = {username,password,user}
+    const newUser = {username,password,groups}
     try{
         const result = await userModel.insertDB(newUser)
         res.json({result});

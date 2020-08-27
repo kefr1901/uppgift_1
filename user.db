@@ -1,13 +1,2 @@
-{"username":"Stephanus","password":"$2a$10$dqdf2GeuWgSU7o4MHdQEweKVPYy.olLMXFi7vj82BnlOxxMSsvFzm","user":"user","_id":"15MgMBKQ68UBODmI"}
-{"username":"Stephanus","password":"$2a$10$IFyQ35FGMUuSGcNqfwB9deyYBwl/rqpFs43UQ1cUjAuy2rUFRngUu","user":"user","_id":"96zs00tBQxgdhQZG"}
-{"username":"Stephanus","password":"$2a$10$PTZAj04CYIV4h4t4ARfnneptbWbraB9bFy8KKyJtGcPgBYAa0vc2u","user":"user","_id":"Io5tmeGGmSYvu6j1"}
-{"username":"Stephanus","password":"$2a$10$TEHIEIQzk7UT4ML5Q52/R./.LfPFbs6UFmVtdnFzMhk0mab1lwURW","user":"user","_id":"MWGJocVyayMZowR7"}
-{"username":"Kevin","password":"$2a$10$p7GRpkGvtS7zByiZO7nKAeLtDOkhm4i8kaA8e0ExDOwLQiZ1xses2","user":"user","_id":"Ns15G2eHNMhvJR8q"}
-{"username":"Stephanus","password":"$2a$10$RMnjQ6QoJX/yvoiVMExu3uc0OrjlDMMZayCc9m0ROueZOwYDC.ZQ6","user":"user","_id":"c0wGfWQWf8hFb5cz"}
-{"username":"Stephanus","password":"$2a$10$kzo4vci5wrMvImfhJk/BLepFrO9t36rZ9jJh4bLz7F91IWulUyyDS","user":"user","_id":"cVoK5fZJh8atUKb1"}
-{"username":"Kevin","password":"$2a$10$VeVxvRYbAot1v2pgXRosM.l7MJ.ACnwpnkyJQyCAqOsyQhhQva9y2","user":"user","_id":"l3iLHGEpNSmWYXkW"}
-{"username":"Kevin","password":"$2a$10$MJCdIaLvIn2yT.xNhpeSpuBKqHMhjfW3qnIhFttKE9m3p0ymP2q2O","user":"user","_id":"lov0OFLqvz1188wg"}
-{"username":"Kevin","password":"$2a$10$.uV8Uwvr/AcgNKxJ/ExoIOuVVqnLvd0U6sFWvSUau6Tw6LSw4BZue","user":"user","_id":"peqyZKpfX40Rz1uC"}
-{"username":"Stephanus","password":"$2a$10$hRnjh0YTKa7b6wkEZ.IKcOHVHdnXleIAQjOsWCIPrHNU/eG0GMXQW","user":"user","_id":"sQ2yfKLMheEy6jyP"}
-{"username":"Stephanus","password":"$2a$10$vgT4L3kIPgJPIJo3FaKP3.waUvsBAeLAbs1XGUdbz5x4fw1jonBOO","user":"user","_id":"tODmcivy7HfNIE86"}
-{"username":"Kevin","password":"$2a$10$dhr7IET9WOh5cLmHdTTqj.ldo1IaeWTT3iqON2bazPMMlbH3O6fHO","user":"user","_id":"xNM98vJAfzvJ6dQk"}
+{"username":"stephan","password":"$2a$10$dRnA9mgybPI3IdaTz06SvuhSdjpBwrNspImRcCKXRgzstCmyLqSLi","groups":["user"],"_id":"J6DiTzOPqkbNsZiB"}
+{"username":"kevin","password":"$2a$10$lCmyXSto0OlqDNvPhZ9fXe3T2BTIOd0JJbkfnETWfJ7WYesfLdl3W","groups":["user","admin"],"_id":"k2kNpvh6HodnokCq"}

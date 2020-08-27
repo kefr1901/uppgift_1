@@ -24,7 +24,8 @@ async function readOne(req, res) {
 
 //UPPDATERAR BEFINTLIGA INLÄGG
 async function update(req, res) {
-    const updateBlog = await postModel.updateBlog(req.params.id, req.body.title, req.body.content, req.body.comment, req.user.userId)
+    var blogPost = { _id: req.params.id ,title: req.body.title, content: req.body.content, comment: req.body.comment , user: req.user.userId };
+    const updateBlog = await postModel.updateBlog(blogPost, req.user.isAdmin)
     res.json(updateBlog + "uppdaterad");
 };
 
